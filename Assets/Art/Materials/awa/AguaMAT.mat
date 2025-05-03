@@ -103,7 +103,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Olas: 7
-    - _OlasAmplitud: 0.01
+    - _OlasAmplitud: 0.06
     - _OlasVelocidad: 1
     - _Parallax: 0.005
     - _Profundidad: 0.73
@@ -113,9 +113,9 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpeculaTchickness: 3.9
-    - _SpecularDensidad: 10
+    - _SpecularDensidad: 45
     - _SpecularHighlights: 1
-    - _SpecularSpeed: 0.75
+    - _SpecularSpeed: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
