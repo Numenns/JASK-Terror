@@ -113,7 +113,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpeculaTchickness: 3.9
-    - _SpecularDensidad: 45
+    - _SpecularDensidad: 1256
     - _SpecularHighlights: 1
     - _SpecularSpeed: 1
     - _SrcBlend: 1
