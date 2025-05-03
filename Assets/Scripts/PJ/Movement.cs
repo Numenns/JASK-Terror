@@ -1,5 +1,4 @@
-using UnityEngine;
-using UnityEngine.Animations;
+﻿using UnityEngine;
 
 public class Movement : MonoBehaviour
 
@@ -8,8 +7,10 @@ public class Movement : MonoBehaviour
     private float yaw = 0f, pitch = 0f;
     private Rigidbody rb;
 
+    [SerializeField] Transform cameraHolder;
     [SerializeField] float speed = 5f, sens = 2f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -42,7 +43,9 @@ public class Movement : MonoBehaviour
         yaw += Input.GetAxis("Mouse X") * sens;
         pitch -= Input.GetAxis("Mouse Y") * sens;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
-        transform.eulerAngles = new Vector3(pitch, yaw, 0f);
+        
+        transform.eulerAngles = new Vector3(0f, yaw, 0f); 
+        cameraHolder.localEulerAngles = new Vector3(pitch, 0f, 0f);
     }
 
 }
