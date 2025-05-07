@@ -18,7 +18,7 @@ public class contar_c : MonoBehaviour
     {
         if (collision.CompareTag("zona"))
         {
-            GameManager.Instance.SumValues_c(1, true);
+            GameManager.Instance.SumValues(true, true);
             Debug.Log(GameManager.Instance.ScoreC.ToString());
             
         }
@@ -26,6 +26,6 @@ public class contar_c : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        GameManager.Instance.SumValues_c(1, false);
+        GameManager.Instance.SumValues(false, false);
     }
 }
