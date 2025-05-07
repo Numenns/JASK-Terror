@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance;
     
-    private int score = 0;
+    private bool F1 = false;
     private int score_c = 0;
     private int score_ca = 0;
 
-    public int Score { get => score; set => score = value; }
+    public bool f1 { get => F1; set => F1 = value; }
     public int ScoreC { get => score_c; set => score_c = value; }
     public int ScoreCA { get => score_ca; set => score_ca = value; }
 
@@ -28,15 +28,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void SumValues(int count, Boolean x)
+    public void SumValues(bool count, Boolean x)
     {
         if (x == true)
         {
-            score += count;
+            F1 = count;
         }
         else
         {
-            score -= count;
+            F1 = count;
         }
        
     }
