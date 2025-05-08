@@ -102,7 +102,7 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Olas: 7
+    - _Olas: 1
     - _OlasAmplitud: 0.06
     - _OlasVelocidad: 1
     - _Parallax: 0.005
@@ -113,7 +113,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpeculaTchickness: 3.9
-    - _SpecularDensidad: 1256
+    - _SpecularDensidad: 1111
     - _SpecularHighlights: 1
     - _SpecularSpeed: 1
     - _SrcBlend: 1
@@ -124,11 +124,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorProfundidad: {r: 0.110751115, g: 0.1781261, b: 0.23018861, a: 1}
+    - _ColorProfundidad: {r: 0.086799555, g: 0.10344711, b: 0.2754717, a: 1}
     - _ColorSuperficie: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SpecularColor: {r: 0.21383406, g: 0.2452414, b: 0.2679245, a: 0}
+    - _SpecularColor: {r: 0.12452829, g: 0.11703897, b: 0.11254538, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4742273412210431855
