@@ -22,6 +22,7 @@ public class agarrar : MonoBehaviour
         }
         coordZ = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - getMposition();
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
     }
     private void OnMouseUp()
     {
