@@ -1,9 +1,12 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class contar_c : MonoBehaviour
-{ 
+{
+    public GameObject herramienta;
+    public Transform posicion1;
     void Start()
     {
         
@@ -20,12 +23,9 @@ public class contar_c : MonoBehaviour
         {
             GameManager.Instance.SumValues(true, true);
             Debug.Log(GameManager.Instance.ScoreC.ToString());
-            
+            Destroy(gameObject);
+            Instantiate(herramienta, posicion1.position, gameObject.transform.rotation);
+
         }
-        
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        GameManager.Instance.SumValues(false, false);
     }
 }
