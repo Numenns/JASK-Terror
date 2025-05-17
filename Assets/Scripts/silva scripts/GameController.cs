@@ -5,16 +5,21 @@ using UnityEngine.InputSystem.XR;
 
 public class GameManager : MonoBehaviour
 {
-    
     public static GameManager Instance;
-    
-    private bool F1 = false;
-    private int score_c = 0;
-    private int score_ca = 0;
 
-    public bool f1 { get => F1; set => F1 = value; }
-    public int ScoreC { get => score_c; set => score_c = value; }
-    public int ScoreCA { get => score_ca; set => score_ca = value; }
+    private bool obj1 = false;
+    private bool obj2 = false;
+    private bool obj3 = false;
+    private bool obj4 = false;
+    private bool obj5 = false;
+    private int velocidad;
+
+    public bool Obj1 { get => obj1; set => obj1 = value; }
+    public bool Obj2 { get => obj2; set => obj2 = value; }
+    public bool Obj3 { get => obj3; set => obj3 = value; }
+    public bool Obj4 { get => obj4; set => obj4 = value; }
+    public bool Obj5 { get => obj5; set => obj5 = value; }
+    public bool Velocidad { get => obj5; set => obj5 = value; }
 
     private void Awake()
     {
@@ -28,43 +33,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void SumValues(bool count, Boolean x)
+    private void aumentar_estres()
     {
-        if (x == true)
-        {
-            F1 = count;
-        }
-        else
-        {
-            F1 = count;
-        }
-       
-    }
-    public void SumValues_c(int count, Boolean x)
-    {
-        if (x == true)
-        {
-            score_c += count;
-        }
-        else
-        {
-            score_c -= count;
-        }
-        
 
     }
-    public void SumValues_ca(int count, Boolean x)
-    {
-        if (x == true)
-        {
-            score_ca += count;
-        }
-        else
-        {
-            score_ca -= count;
-        }
-        
-
-    }
-
 }

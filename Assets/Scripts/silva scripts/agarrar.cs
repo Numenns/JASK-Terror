@@ -16,10 +16,10 @@ public class agarrar : MonoBehaviour
     private void OnMouseDrag()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        coordZ += scroll * 2f;
+        coordZ += scroll;
         if (Input.GetKeyDown(KeyCode.R))
         {
-            transform.Rotate(0, 0, 90);
+            transform.Rotate(0, 0, 90f);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
