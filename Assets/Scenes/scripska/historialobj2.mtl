@@ -1,0 +1,48 @@
+# Blender 4.1.0 MTL File: 'untitled.blend'
+# www.blender.org
+
+newmtl Material
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.636364
+illum 9
+Pr 1.000000
+Pm 0.000000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.000000
+anisor 0.000000
+map_Kd textures/36diff.jpeg
+
+newmtl Material.006
+Kd 0.382327 0.310540 0.242168
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+Pr 0.012727
+Pm 0.000000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.000000
+anisor 0.000000
+
+newmtl Material.007
+Kd 0.259381 0.181044 0.126256
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+Pr 0.500000
+Pm 0.000000
+Ps 0.000000
+Pc 0.000000
+Pcr 0.030000
+aniso 0.555932
+anisor 0.057627
+map_Bump -bm 1.000000 C:/Users/Karol/Downloads/concrete_wall_001_4k.blend/textures/concrete_wall_001_nor_gl_4k.exr
