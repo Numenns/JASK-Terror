@@ -15,14 +15,16 @@ public class respawn : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag =="objeto")
+        if (collision.gameObject.tag=="zona respawn")
         {
-            switch (collision.gameObject.name)
+            switch (gameObject.name)
             {
-                case "needle_forceps":
+                case "obj1":
+                    
                     Vector3 x = new Vector3(-2.135f, 1.6218f, -1.0567f);
                     Quaternion R = Quaternion.Euler(-90f, 0f, 0f);
-                    Instantiate(herramienta, x, R);
+                    Instantiate(gameObject, x, R);
+                    Destroy(gameObject);
                     break;
             }
         }
