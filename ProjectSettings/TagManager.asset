@@ -3,12 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - objeto
+  - zona
+  - obji
+  - ObjetoPuerta2
+  - Historiaclinica
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Rycastpuerta
   - Water
   - UI
   - 
