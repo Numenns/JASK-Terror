@@ -23,7 +23,7 @@ public class contar_c : MonoBehaviour
             case "Obj1":
                 if (collision.gameObject.name.Equals("Obj1zona"))
                 {
-                    quaternion y = quaternion.Euler(-0.70711f, 0.00000f, 0.00000f, 0.70710f);
+                    quaternion y = quaternion.Euler(-0.70711f, 0.00000f, 0.00000f);
                     if (gameObject.transform.localScale.x < 0.7f)
                     {
                         GameManager.Instance.Obj1 = true;
