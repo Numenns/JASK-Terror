@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class agarrar : MonoBehaviour
@@ -7,11 +8,19 @@ public class agarrar : MonoBehaviour
     float coordZ;
     private Rigidbody rb;
     private Boolean pequeño=true;
-    
+    private Boolean tiempo =false;
+    private float estres;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        if (tiempo)
+        {
+            estres += Time.deltaTime;
+        }
     }
     private void OnMouseDrag()
     {
@@ -51,6 +60,7 @@ public class agarrar : MonoBehaviour
         }
         coordZ = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - getMposition();
+        tiempo = true;
         
     }
     private void OnMouseUp()
@@ -59,6 +69,8 @@ public class agarrar : MonoBehaviour
         {
             rb.useGravity = true;
         }
+        tiempo = false;
+        Debug.Log(estres);
         
     }
     private Vector3 getMposition()

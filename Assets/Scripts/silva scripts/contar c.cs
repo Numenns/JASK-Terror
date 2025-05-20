@@ -14,7 +14,7 @@ public class contar_c : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject.transform.localScale.ToString() + "rotacion" + gameObject.transform.rotation.ToString());
+        //Debug.Log(gameObject.transform.localScale.ToString() + "rotacion" + gameObject.transform.rotation.eulerAngles.ToString());
     }
     private void OnTriggerEnter(Collider collision)
     {
@@ -23,8 +23,8 @@ public class contar_c : MonoBehaviour
             case "Obj1":
                 if (collision.gameObject.name.Equals("Obj1zona"))
                 {
-                    quaternion y = quaternion.Euler(-0.70711f, 0.00000f, 0.00000f, 0.70710f);
-                    if (gameObject.transform.localScale.x < 0.7f)
+                    quaternion y = quaternion.Euler(270f, 90f, 0f);
+                    if (gameObject.transform.localScale.x < 0.7f && gameObject.transform.rotation == y)
                     {
                         GameManager.Instance.Obj1 = true;
                         Debug.Log(GameManager.Instance.Obj1.ToString());
@@ -35,6 +35,7 @@ public class contar_c : MonoBehaviour
 
                 }
                 break;
+            
         }
         
     }
