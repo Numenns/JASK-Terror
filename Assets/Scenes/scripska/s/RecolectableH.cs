@@ -10,7 +10,7 @@ public class RaycastSeleccionador : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Click izquierdo
+        if (Input.GetMouseButtonDown(0)) 
         {
             Ray ray = camaraPrincipal.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -23,7 +23,6 @@ public class RaycastSeleccionador : MonoBehaviour
                 {
                     MostrarDialogo(mensaje);
 
-                    // Si tiene el componente de animación, lo activamos
                     DestruccionConAnimacion animacion = objeto.GetComponent<DestruccionConAnimacion>();
                     if (animacion != null)
                     {
@@ -31,7 +30,7 @@ public class RaycastSeleccionador : MonoBehaviour
                     }
                     else
                     {
-                        Destroy(objeto); // Fallback si no tiene animación
+                        Destroy(objeto); 
                     }
                 }
             }
