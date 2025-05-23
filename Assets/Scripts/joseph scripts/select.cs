@@ -27,11 +27,20 @@ public class Select : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    // Primero intenta detectar ObjetoInteractivo
                     ObjetoInteractivo objeto = hit.collider.GetComponent<ObjetoInteractivo>();
                     if (objeto != null)
                     {
                         objeto.ActivarObjeto();
-                  
+                    }
+                    else
+                    {
+                        // Si no está, intenta con ObjetoInteractivol
+                        ObjetoInteractivol objetoL = hit.collider.GetComponent<ObjetoInteractivol>();
+                        if (objetoL != null)
+                        {
+                            objetoL.ActivarObjeto();
+                        }
                     }
                 }
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
