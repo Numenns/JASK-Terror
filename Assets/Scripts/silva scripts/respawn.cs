@@ -13,22 +13,20 @@ public class respawn : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag=="zona respawn")
+        if (other.gameObject.CompareTag("objeto"))
         {
-            switch (gameObject.name)
+            Debug.Log("callo");
+            switch (other.name)
             {
-                case "obj1":
-                    
+                case "Obj1":
+                    Debug.Log("hola mundo");
                     Vector3 x = new Vector3(-2.135f, 1.6218f, -1.0567f);
-                    Quaternion R = Quaternion.Euler(-90f, 0f, 0f);
-                    Instantiate(gameObject, x, R);
-                    Destroy(gameObject);
+                    other.gameObject.transform.position = x;
                     break;
             }
         }
-
-
     }
+
 }
