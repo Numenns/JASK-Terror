@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    [SerializeField] private float tiempomaximo;
-    private float tiempoActual;
+    [SerializeField] private float tiempomaximo = 3; // en minutos
+    [SerializeField] private ParticleSystem particulas;
+
+    private float tiempoActual = 0f;
     private bool tiempoActivado = false;
-    private int minutos;
     public TextMeshProUGUI temp;
+
+    private bool empezarDuplicacion = false;
+    private float tiempoUltimaDuplicacion = 0f;
+    private float intervaloDuplicacion = 5f; // cada 5 segundos
+    private int contadorDuplicados = 0;
+
 
     private void Start()
     {
@@ -18,46 +25,55 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (tiempoActivado)
         {
-            CambiarTimeer();
+            tiempoActual += Time.deltaTime;
+
+            int minutos = Mathf.FloorToInt(tiempoActual / 60);
+            int segundos = Mathf.FloorToInt(tiempoActual % 60);
+            temp.text = minutos + ":" + segundos;
+
+            if (tiempoActual >= tiempomaximo * 60)
+            {
+                Debug.Log("Derrota");
+                DesactivarTemporizador();
+            }
+
+            if (!empezarDuplicacion && tiempoActual >= 60f)
+            {
+                empezarDuplicacion = true;
+                tiempoUltimaDuplicacion = tiempoActual; 
+            }
+
+          
+            if (empezarDuplicacion && tiempoActual - tiempoUltimaDuplicacion >= intervaloDuplicacion)
+            {
+                DuplicarParticulas();
+                tiempoUltimaDuplicacion = tiempoActual;
+            }
         }
-        acomodarT();
-        temp.text = minutos + ":" + tiempoActual;
 
     }
-
-    private void CambiarTimeer()
+    private void DuplicarParticulas()
     {
-        tiempoActual += Time.deltaTime;
-
-        if (minutos >= tiempomaximo)
+        if (particulas != null)
         {
-            Debug.Log("Derrota");
-            CambiarTemporizador(false);
+            Vector3 offset = new Vector3(contadorDuplicados * 1.5f, 0, 0); 
+            Instantiate(particulas, particulas.transform.position + offset, Quaternion.identity);
+            contadorDuplicados++;
+            Debug.Log("Partículas duplicadas #" + contadorDuplicados);
         }
-    }
-
-    private void CambiarTemporizador(bool estado)
-    {
-        tiempoActivado = estado;
     }
 
     public void ActivarTemporizador()
     {
-        tiempoActual = tiempomaximo;
-        CambiarTemporizador(true);
+        tiempoActual = 0;
+        tiempoActivado = true;
+        empezarDuplicacion = false;
+        tiempoUltimaDuplicacion = 0f;
+        contadorDuplicados = 0;
     }
 
     public void DesactivarTemporizador()
     {
-        CambiarTemporizador(false);
+        tiempoActivado = false;
     }
-    public void acomodarT()
-    {
-        if (tiempoActual > 60)
-        {
-            minutos += 1;
-            tiempoActual = 0;
-        }
-    }
-
 }

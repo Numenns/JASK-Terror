@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2541006253000019694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6770415226807573973}
+  - component: {fileID: 8440440160673391775}
+  - component: {fileID: 4902112919275421707}
+  - component: {fileID: 8870385574024523139}
+  m_Layer: 7
+  m_Name: default
+  m_TagString: Historiaclinica
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6770415226807573973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541006253000019694}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.014581548, y: 0.78441405, z: -0.026679017, w: 0.61949193}
+  m_LocalPosition: {x: -0.44, y: 1.75, z: -0.58}
+  m_LocalScale: {x: 0.22879454, y: 0.38918176, z: 0.47199398}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6162451467758201997}
+  m_LocalEulerAnglesHint: {x: 1.363, y: 103.362, z: -3.207}
+--- !u!33 &8440440160673391775
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541006253000019694}
+  m_Mesh: {fileID: -2432090755550338912, guid: b1b499eb7e2bf85488318379c701aa94, type: 3}
+--- !u!23 &4902112919275421707
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541006253000019694}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dab0c95aa835dc44eb9f0f49b517b860, type: 2}
+  - {fileID: -8274133419916619345, guid: b1b499eb7e2bf85488318379c701aa94, type: 3}
+  - {fileID: -2813467912831258332, guid: b1b499eb7e2bf85488318379c701aa94, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8870385574024523139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541006253000019694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82fd7ba6815f824ea2a402412b32074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duracion: 0.5
+--- !u!1 &6831604775809693239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6162451467758201997}
+  - component: {fileID: 7102415944208767813}
+  m_Layer: 7
+  m_Name: historialobj2 (1)
+  m_TagString: Historiaclinica
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6162451467758201997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831604775809693239}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.20890996, z: -0, w: 0.97793496}
+  m_LocalPosition: {x: -12.7, y: -1.13, z: -12.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6770415226807573973}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -24.117, z: 0}
+--- !u!114 &7102415944208767813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831604775809693239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510a9ffc61952e2458c9ba1ac75393da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camaraPrincipal: {fileID: 0}
+  dialogText: {fileID: 0}
+  mensaje: "\xA1Objeto destruido!"
+  tagObjetivo: Historiaclinica
