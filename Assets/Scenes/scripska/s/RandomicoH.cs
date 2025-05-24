@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class RandomicoH : MonoBehaviour
 {
-    public GameObject prefabHistoriaClinica;
-    public int cantidad = 5;
-    public Vector3 areaMin = new Vector3(-10, 0, -10);
-    public Vector3 areaMax = new Vector3(10, 0, 10);
+    public GameObject HojasB1;
+    public GameObject HojasB2;
+    public GameObject HojasB3;
 
+    private int resultado;
 
     void Start()
     {
-        for (int i = 0; i < cantidad; i++)
-        {
-            Vector3 posicionAleatoria = new Vector3(
-                Random.Range(areaMin.x, areaMax.x),
-                Random.Range(areaMin.y, areaMax.y),
-                Random.Range(areaMin.z, areaMax.z)
-            );
+        resultado = Random.Range(1, 4); // De 1 a 3 inclusive
 
-            GameObject historia = Instantiate(prefabHistoriaClinica, posicionAleatoria, Quaternion.identity);
-            historia.tag = "HistoriaClinica";
-            historia.layer = LayerMask.NameToLayer("HistoriaClin");
+        if (resultado == 1)
+        {
+            HojasB1.SetActive(true);
+        }
+        else if (resultado == 2)
+        {
+            HojasB2.SetActive(true);
+        }
+        else if (resultado == 3)
+        {
+            HojasB3.SetActive(true);
         }
     }
 }
-
-  
-

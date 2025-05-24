@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Historiaclinica : MonoBehaviour
+public class HistoriaClinica : MonoBehaviour
 {
     private Animator animator;
     private bool yaDestruyendose = false;
@@ -12,29 +12,22 @@ public class Historiaclinica : MonoBehaviour
         {
             Debug.LogError("Falta el componente Animator en " + gameObject.name);
         }
+    }
 
-        void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
+    {
+        if (!yaDestruyendose && other.CompareTag("Player"))
         {
-            if (!yaDestruyendose && other.CompareTag("Player"))
+            if (CompareTag("Historiaclinica") && gameObject.layer == LayerMask.NameToLayer("HistoriaClin"))
             {
-                if (gameObject.CompareTag("HistoriaClinica") && gameObject.layer == LayerMask.NameToLayer("HistoriaClin"))
-                {
-                    yaDestruyendose = true;
-                    animator.SetTrigger("Destruir");
-                }
+                yaDestruyendose = true;
+                animator.SetTrigger("Destruir");
             }
-
         }
     }
 
-         public void DestruirObjeto()
+    public void DestruirObjeto()
     {
         Destroy(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
