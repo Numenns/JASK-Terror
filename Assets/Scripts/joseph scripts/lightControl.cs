@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class lightControl : MonoBehaviour
 {
-    public GameObject LL; 
+    public GameObject LL;
     public GameObject LP;
 
-    public bool linterapick = true; 
+    public bool linterapick = true;
 
-    private int estado = 0; 
+    private int estado = 0;
 
     void Update()
     {
-        if (!linterapick) return; 
+        if (!linterapick) return;
         if (Input.GetKeyDown(KeyCode.F))
         {
             estado++;

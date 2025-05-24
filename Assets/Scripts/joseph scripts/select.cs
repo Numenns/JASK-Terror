@@ -10,7 +10,6 @@ public class Select : MonoBehaviour
 
     void Start()
     {
-
         mask = LayerMask.GetMask("rayd");
         TextDetect.SetActive(false);
     }
@@ -23,11 +22,19 @@ public class Select : MonoBehaviour
         {
             Deselect();
             SelectedObject(hit.transform);
+
             if (hit.collider.CompareTag("obji"))
             {
+                // Mostrar mensaje si es un ObjNote disponible
+                ObjNote nota = hit.collider.GetComponent<ObjNote>();
+                if (nota != null && nota.EstaDisponible())
+                {
+                    nota.MostrarMensaje();
+                }
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    // Primero intenta detectar ObjetoInteractivo
+                    // ObjetoInteractivo
                     ObjetoInteractivo objeto = hit.collider.GetComponent<ObjetoInteractivo>();
                     if (objeto != null)
                     {
@@ -35,14 +42,23 @@ public class Select : MonoBehaviour
                     }
                     else
                     {
-                        // Si no está, intenta con ObjetoInteractivol
+                        // ObjetoInteractivol
                         ObjetoInteractivol objetoL = hit.collider.GetComponent<ObjetoInteractivol>();
                         if (objetoL != null)
                         {
                             objetoL.ActivarObjeto();
                         }
+                        else
+                        {
+                            // ObjNote
+                            if (nota != null)
+                            {
+                                nota.ActivarObjeto();
+                            }
+                        }
                     }
                 }
+
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
             }
             else
@@ -52,9 +68,10 @@ public class Select : MonoBehaviour
         }
         else
         {
-            Deselect(); // <-- Añade esto para deseleccionar cuando NO hay hit
+            Deselect();
         }
     }
+
     void SelectedObject(Transform transform)
     {
         transform.GetComponent<MeshRenderer>().material.color = Color.green;
@@ -65,10 +82,19 @@ public class Select : MonoBehaviour
     {
         if (ultimoReconocido)
         {
+            // Oculta mensaje de ObjNote si corresponde
+            ObjNote nota = ultimoReconocido.GetComponent<ObjNote>();
+            if (nota != null)
+            {
+                nota.OcultarMensaje();
+            }
+
+            // Restaurar color
             ultimoReconocido.GetComponent<Renderer>().material.color = Color.white;
             ultimoReconocido = null;
         }
     }
+
     void OnGUI()
     {
         Rect rect = new Rect(Screen.width / 2, Screen.height / 2, puntero.width, puntero.height);
@@ -83,5 +109,4 @@ public class Select : MonoBehaviour
             TextDetect.SetActive(false);
         }
     }
-
 }
