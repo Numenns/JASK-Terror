@@ -5,11 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/escenaPruebas.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/escenaAlvarez 1.unity
+    path: Assets/Scenes/menu.unity
+    guid: 110e5127d891d274680241b004c8c224
+  - enabled: 1
+    path: Assets/Scenes/Cinematica.unity
+    guid: a963a7a30ddaa0f4096f27530e61d724
+  - enabled: 1
+    path: Assets/Scenes/escenaAlvarez.unity
     guid: 80e779fb538301747ad2923bcfa55792
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

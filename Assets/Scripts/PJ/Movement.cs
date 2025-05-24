@@ -2,18 +2,18 @@
 
 public class Movement : MonoBehaviour
 
-
 {
     private float yaw = 0f, pitch = 0f;
     private Rigidbody rb;
 
     [SerializeField] Transform cameraHolder;
     [SerializeField] float speed = 5f, sens = 2f;
+    [SerializeField] bool bloqueoCursor = true;
+
 
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -47,5 +47,8 @@ public class Movement : MonoBehaviour
         transform.eulerAngles = new Vector3(0f, yaw, 0f); 
         cameraHolder.localEulerAngles = new Vector3(pitch, 0f, 0f);
     }
-
+    
 }
+
+
+
