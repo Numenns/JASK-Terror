@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
 
     [SerializeField] Transform cameraHolder;
-    [SerializeField] float speed = 5f, sens = 2f;
+    [SerializeField] public float speed = 5f, sens = 2f;
     [SerializeField] bool bloqueoCursor = true;
 
 

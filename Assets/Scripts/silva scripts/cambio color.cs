@@ -10,14 +10,8 @@ public class cambiocolor : MonoBehaviour
 
     void Update()
     {
-        cambio();
+        
     }
-    private void cambio()
-    {
-        if (GameManager.Instance.Obj1 == true)
-        {
-            Destroy(gameObject);
-        }
-    }
+
    
 }
