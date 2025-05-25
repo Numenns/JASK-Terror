@@ -2,9 +2,9 @@ using TMPro;
 using UnityEngine;
 
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Timeerr: MonoBehaviour
 {
-    [SerializeField] private float tiempomaximo = 3; // en minutos
+    [SerializeField] private float tiempomaximo = 3;
     [SerializeField] private ParticleSystem particulas;
 
     private float tiempoActual = 0f;
@@ -13,7 +13,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private bool empezarDuplicacion = false;
     private float tiempoUltimaDuplicacion = 0f;
-    private float intervaloDuplicacion = 5f; // cada 5 segundos
+    private float intervaloDuplicacion = 5f; 
     private int contadorDuplicados = 0;
 
 
@@ -56,7 +56,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (particulas != null)
         {
-            Vector3 offset = new Vector3(contadorDuplicados * 1.5f, 0, 0); 
+            Vector3 offset = new Vector3(contadorDuplicados * 1.9f, 0, 0); 
             Instantiate(particulas, particulas.transform.position + offset, Quaternion.identity);
             contadorDuplicados++;
             Debug.Log("Partículas duplicadas #" + contadorDuplicados);
