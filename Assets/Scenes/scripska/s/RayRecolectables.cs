@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class RecolectorHistoriaClinica : MonoBehaviour
+public class RayRecolectables : MonoBehaviour
 {
     public float distanciaInteraccion = 2f;
     public LayerMask capaHistoriaClin;
@@ -63,7 +63,11 @@ public class RecolectorHistoriaClinica : MonoBehaviour
         string mensaje = mensajesMedicos[Random.Range(0, mensajesMedicos.Length)];
         mensajeTexto.text = mensaje;
         CancelInvoke(nameof(LimpiarMensaje));
-        Invoke(nameof(LimpiarMensaje), 3f); // Borra el mensaje después de 3 segundos
+        Invoke(nameof(LimpiarMensaje), 3f); 
+    }
+    public int GetContador()
+    {
+        return historiasRecolectadas;
     }
 
     void LimpiarMensaje()
