@@ -27,7 +27,7 @@ public class agarrar : MonoBehaviour
         nZ = gameObject.transform.localScale.z * escala;
         newScaleG = transform.localScale + new Vector3((float)nX, (float)nY, (float)nZ);
         newScaleP = transform.localScale - new Vector3((float)nX, (float)nY, (float)nZ);
-
+        
 
     }
     private void Update()
@@ -43,7 +43,9 @@ public class agarrar : MonoBehaviour
         coordZ += scroll;
         if (Input.GetKeyDown(KeyCode.R))
         {
-            transform.Rotate(rotacion);
+            Vector3 rotacionActual = transform.rotation.eulerAngles;
+            Vector3 nuevaRotacion = rotacionActual + rotacion;
+            transform.rotation = Quaternion.Euler(nuevaRotacion);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
