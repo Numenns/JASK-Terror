@@ -10,7 +10,7 @@ public class RandomicoH : MonoBehaviour
 
     void Start()
     {
-        resultado = Random.Range(1, 4); // De 1 a 3 inclusive
+        resultado = Random.Range(1, 4);
 
         if (resultado == 1)
         {
