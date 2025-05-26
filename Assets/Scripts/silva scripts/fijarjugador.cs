@@ -4,8 +4,8 @@ using UnityEngine;
 public class fijarjugador : MonoBehaviour
 {
     public GameObject muñeco;
-    public AudioSource audio1;
-    public AudioSource audio2;
+    public AudioSource musica;
+    public AudioSource respiracion;
     public Canvas tiempo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +23,8 @@ public class fijarjugador : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
-            audio1.Play();
+            musica.Play();
+            respiracion.Play();
 
             tiempo.gameObject.SetActive(true);
             Vector3 x = new Vector3(-1.828f, 2f, 0.335f);

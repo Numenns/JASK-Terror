@@ -12,7 +12,7 @@ public class velocidadCamara : MonoBehaviour
     public float rotacion_maxima;
     public Light luz;
     public Light luzTV;
-    public Light luz3;
+    private Light luz3;
     public GameObject muñeco1;
     public GameObject muñeco2;
     [SerializeField] float luz2P;
@@ -26,6 +26,7 @@ public class velocidadCamara : MonoBehaviour
     void Start()
     {
         lastRotation = transform.rotation;
+        luz3 = muñeco2.GetComponentInChildren<Light> ();
         
     }
 
@@ -55,7 +56,7 @@ public class velocidadCamara : MonoBehaviour
             GameManager.Instance.Perdiste = true;
             StopAllCoroutines();
         }
-        else if(despierto && rotationSpeed > 5f)
+        else if(despierto && rotationSpeed > 3f)
         {
             StopAllCoroutines();
             GameManager.Instance.Perdiste = true;
