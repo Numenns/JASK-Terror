@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.2603773, g: 0.2603773, b: 0.2603773, a: 0.21176471}
   m_FogMode: 3
-  m_FogDensity: 0.029
+  m_FogDensity: 0.011
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -18451,7 +18451,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3e6f800d6f6b29e488d035c6a5ec8c6d, type: 3}
   m_Resource: {fileID: 8300000, guid: 3e6f800d6f6b29e488d035c6a5ec8c6d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -20945,11 +20945,7 @@ MonoBehaviour:
   - {fileID: 1966359333}
   - {fileID: 178010819}
   - {fileID: 1203746876}
-  - {fileID: 1793649404}
-  - {fileID: 879605938}
-  - {fileID: 21600827}
   - {fileID: 1345124862}
-  - {fileID: 165510010}
   - {fileID: 1149810739}
   - {fileID: 2030899603}
   aiAnim: {fileID: 472079586}
@@ -50172,7 +50168,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180089937}
-  - component: {fileID: 1180089938}
   m_Layer: 0
   m_Name: ----gameManager----
   m_TagString: Untagged
@@ -50195,18 +50190,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1180089938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180089936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85f9d600d6689c046b6415cb17bf964d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1183043201
 GameObject:
   m_ObjectHideFlags: 0
