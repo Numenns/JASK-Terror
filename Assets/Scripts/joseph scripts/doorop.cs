@@ -6,7 +6,7 @@ public class DoorManager : MonoBehaviour
 
     void Update()
     {
-        if (Inventario.Instancia.Motores >= 6)
+        if (Inventario.Instancia.Motores >= 8)
         {
             opdoor.SetActive(true);
         }
