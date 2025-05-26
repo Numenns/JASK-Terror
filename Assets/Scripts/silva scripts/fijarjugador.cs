@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class fijarjugador : MonoBehaviour
 {
-    public Light luz;
     public GameObject muñeco;
+    public AudioSource audio1;
+    public AudioSource audio2;
+    public Canvas tiempo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,10 +20,12 @@ public class fijarjugador : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        audio1.Play();
+        
+        tiempo.gameObject.SetActive(true);
         Vector3 x = new Vector3(-1.828f, 2f, 0.335f);
         if (other.gameObject.CompareTag("Player"))
         {
-            muñeco.active = true;
 
             GameManager.Instance.Iniciar = true;
             other.gameObject.transform.position = x;
@@ -28,4 +33,5 @@ public class fijarjugador : MonoBehaviour
             other.gameObject.GetComponent<Movement>().speed = 0;
         }
     }
+
 }
