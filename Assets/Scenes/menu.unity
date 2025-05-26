@@ -650,6 +650,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1dbb39f96137e3142b6cc62de1cda6b1, type: 3}
   m_PrefabInstance: {fileID: 227618343}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &229274017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229274019}
+  - component: {fileID: 229274018}
+  m_Layer: 0
+  m_Name: Instance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &229274018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229274017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f9d600d6689c046b6415cb17bf964d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &229274019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229274017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -313.37885, y: 7.337431, z: -674.59674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &235016587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17618,8 +17662,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 77da010ea2bba734196234ddad1c443e, type: 3}
-  m_Resource: {fileID: 8300000, guid: 77da010ea2bba734196234ddad1c443e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 44ff75a748450164d8f7c4bca09022ab, type: 3}
+  m_Resource: {fileID: 8300000, guid: 44ff75a748450164d8f7c4bca09022ab, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -36431,3 +36475,4 @@ SceneRoots:
   - {fileID: 76960203}
   - {fileID: 770343213}
   - {fileID: 773943987}
+  - {fileID: 229274019}

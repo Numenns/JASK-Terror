@@ -5,6 +5,7 @@ public class ObjetoInteractivol : MonoBehaviour
     private bool yaActivado = false;
 
     public GameObject objetoAActivar;
+    public AudioClip sonidoAlRecoger; // Asignar desde el Inspector
 
     public void ActivarObjeto()
     {
@@ -17,11 +18,17 @@ public class ObjetoInteractivol : MonoBehaviour
                 objetoAActivar.SetActive(true);
             }
 
-            // Buscar el script lightControl en la escena y activar la linterna
+            
             lightControl lc = FindObjectOfType<lightControl>();
             if (lc != null)
             {
                 lc.linterapick = true;
+            }
+
+  
+            if (sonidoAlRecoger != null)
+            {
+                AudioSource.PlayClipAtPoint(sonidoAlRecoger, transform.position);
             }
 
             Destroy(gameObject);
