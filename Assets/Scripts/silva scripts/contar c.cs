@@ -1,14 +1,34 @@
 using System;
+using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 
 public class contar_c : MonoBehaviour
 {
     public GameObject herramienta;
+    [SerializeField] private float escala;
+    private double nX;
+    private double nY;
+    private double nZ;
+    Vector3 newScaleG;
+    Vector3 newScaleP;
+    [SerializeField] private float rotacion;
+    private float max;
+    private float min;
+    [SerializeField] private String zona;
+    [SerializeField] private Boolean grande;
+
     void Start()
     {
-        
+        nX = gameObject.transform.localScale.x * escala;
+        nY = gameObject.transform.localScale.y * escala;
+        nZ = gameObject.transform.localScale.z * escala;
+        newScaleG = transform.localScale + new Vector3((float)nX, (float)nY, (float)nZ);
+        newScaleP = transform.localScale - new Vector3((float)nX, (float)nY, (float)nZ);
+        max = rotacion + 1;
+        min = rotacion - 1;
     }
 
     // Update is called once per frame
@@ -18,26 +38,38 @@ public class contar_c : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        switch (gameObject.name)
+        Debug.Log("colicion");
+        if (collision.gameObject.name.Equals(zona) && grande)
         {
-            case "Obj1":
-                if (collision.gameObject.name.Equals("Obj1zona"))
-                {
-                    quaternion y = quaternion.Euler(270f, 90f, 0f);
-                    if (gameObject.transform.localScale.x < 0.7f && gameObject.transform.rotation == y)
-                    {
-                        GameManager.Instance.Obj1 = true;
-                        Debug.Log(GameManager.Instance.Obj1.ToString());
-                        Destroy(gameObject);
-                        Instantiate(herramienta, collision.gameObject.transform.position, gameObject.transform.rotation);
-                    }
+            Debug.Log("colicion G");
+            if (gameObject.transform.localScale == newScaleG && gameObject.transform.rotation.eulerAngles.y > min && gameObject.transform.rotation.eulerAngles.y < max)
+            {
+                Debug.Log(collision.gameObject.transform.position);
+                GameManager.Instance.Cuenta += 1;
+                Debug.Log(GameManager.Instance.Cuenta.ToString());
+                Destroy(gameObject);
+                Instantiate(herramienta, collision.gameObject.transform.position, gameObject.transform.rotation);
+                Destroy(collision.gameObject);
+            }
 
 
-                }
-                break;
-            
         }
-        
+        else
+        {
+            if (gameObject.transform.localScale == newScaleP && gameObject.transform.rotation.eulerAngles.y > min && gameObject.transform.rotation.eulerAngles.y < max)
+            {
+                Debug.Log(collision.gameObject.transform.position);
+                GameManager.Instance.Cuenta += 1;
+                Debug.Log(GameManager.Instance.Cuenta.ToString());
+                Destroy(gameObject);
+                Instantiate(herramienta, collision.gameObject.transform.position, gameObject.transform.rotation);
+                Destroy(collision.gameObject);
+            }
+        }
+
+
+
+
     }
-    
+
 }
