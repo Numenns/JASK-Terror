@@ -9,7 +9,21 @@ public class ObjNote : MonoBehaviour
     [TextArea]
     public string textoNota;
 
+    [Header("Sonido al recoger la nota")]
+    public AudioClip sonidoRecoger;
+
     private bool recogido = false;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        // Intenta obtener un AudioSource del mismo objeto o lo añade si no existe
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     public bool EstaDisponible()
     {
@@ -38,6 +52,12 @@ public class ObjNote : MonoBehaviour
         {
             recogido = true;
 
+            // Reproducir sonido si hay uno asignado
+            if (sonidoRecoger != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(sonidoRecoger);
+            }
+
             // Mostrar en consola el texto que se va a añadir
             Debug.Log("Texto a añadir al inventario: " + textoNota);
 
@@ -49,7 +69,18 @@ public class ObjNote : MonoBehaviour
             }
 
             OcultarMensaje();
-            gameObject.SetActive(false);
+
+            // Opcional: retrasar la desactivación para que se escuche el sonido
+            StartCoroutine(DesactivarTrasSonido());
         }
+    }
+
+    private System.Collections.IEnumerator DesactivarTrasSonido()
+    {
+        if (sonidoRecoger != null)
+        {
+            yield return new WaitForSeconds(sonidoRecoger.length);
+        }
+        gameObject.SetActive(false);
     }
 }

@@ -10,6 +10,9 @@ public class Inventario : MonoBehaviour
 
 
     public int Cuenta { get => cuenta; set => cuenta = value; }
+    private int motores = 0;
+
+    public int Motores { get => motores; set => motores = value; }
 
 
     void Awake()

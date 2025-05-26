@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/escenaAlvarez.unity
     guid: 80e779fb538301747ad2923bcfa55792
+  - enabled: 1
+    path: Assets/Scenes/escneJoseph.unity
+    guid: 36fe2711693d4184fb4a2c3e7cac1f46
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
