@@ -7862,6 +7862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obj6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 348faf5ada6116f44a6fb66034ba8aa4, type: 3}
+      propertyPath: m_TagString
+      value: objeto
+      objectReference: {fileID: 0}
     - target: {fileID: 6647053011691330922, guid: 348faf5ada6116f44a6fb66034ba8aa4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -8581,6 +8585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obj2
       objectReference: {fileID: 0}
+    - target: {fileID: 5243523822900990495, guid: e1ff736b016939a4191848840ef7737b, type: 3}
+      propertyPath: m_TagString
+      value: objeto
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8658,6 +8666,10 @@ PrefabInstance:
     - target: {fileID: 4364224905773881509, guid: b657f95db5f367b469804658345810fc, type: 3}
       propertyPath: m_Name
       value: Obj5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364224905773881509, guid: b657f95db5f367b469804658345810fc, type: 3}
+      propertyPath: m_TagString
+      value: objeto
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8887,6 +8899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obj3
       objectReference: {fileID: 0}
+    - target: {fileID: 1002943442897120057, guid: 42044794b882b5b4f8eab9ca215822dd, type: 3}
+      propertyPath: m_TagString
+      value: objeto
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8911,7 +8927,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2798425230316732694, guid: d3bc8c1e5ee9f5345a5c8ff4f3883dd7, type: 3}
       propertyPath: m_Name
-      value: obj4
+      value: Obj4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798425230316732694, guid: d3bc8c1e5ee9f5345a5c8ff4f3883dd7, type: 3}
+      propertyPath: m_TagString
+      value: objeto
       objectReference: {fileID: 0}
     - target: {fileID: 3287012306633186220, guid: d3bc8c1e5ee9f5345a5c8ff4f3883dd7, type: 3}
       propertyPath: m_LocalScale.x

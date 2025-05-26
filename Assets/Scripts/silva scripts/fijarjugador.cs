@@ -20,13 +20,13 @@ public class fijarjugador : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        audio1.Play();
         
-        tiempo.gameObject.SetActive(true);
-        Vector3 x = new Vector3(-1.828f, 2f, 0.335f);
         if (other.gameObject.CompareTag("Player"))
         {
+            audio1.Play();
 
+            tiempo.gameObject.SetActive(true);
+            Vector3 x = new Vector3(-1.828f, 2f, 0.335f);
             GameManager.Instance.Iniciar = true;
             other.gameObject.transform.position = x;
             other.gameObject.GetComponent<Rigidbody>().useGravity = false;
