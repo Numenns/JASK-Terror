@@ -9,6 +9,7 @@ TagManager:
   - obji
   - ObjetoPuerta2
   - Historiaclinica
+  - Enemigo
   layers:
   - Default
   - TransparentFX

@@ -1,11 +1,11 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
-
-public class Timeerr: MonoBehaviour
+public class Timeerr : MonoBehaviour
 {
-    [SerializeField] private float tiempomaximo = 3;
+    [SerializeField] private float tiempomaximo = 3; // En minutos
     [SerializeField] private ParticleSystem particulas;
+    [SerializeField] private RayRecolectables rayRecolectables; // ✅ Referencia a RayRecolectables
 
     private float tiempoActual = 0f;
     private bool tiempoActivado = false;
@@ -13,14 +13,14 @@ public class Timeerr: MonoBehaviour
 
     private bool empezarDuplicacion = false;
     private float tiempoUltimaDuplicacion = 0f;
-    private float intervaloDuplicacion = 5f; 
+    private float intervaloDuplicacion = 5f;
     private int contadorDuplicados = 0;
-
 
     private void Start()
     {
         ActivarTemporizador();
     }
+
     void Update()
     {
         if (tiempoActivado)
@@ -29,37 +29,42 @@ public class Timeerr: MonoBehaviour
 
             int minutos = Mathf.FloorToInt(tiempoActual / 60);
             int segundos = Mathf.FloorToInt(tiempoActual % 60);
-            temp.text = minutos + ":" + segundos;
+            temp.text = minutos + ":" + segundos.ToString("D2");
 
+            // 🛑 Derrota por tiempo
             if (tiempoActual >= tiempomaximo * 60)
             {
-                Debug.Log("Derrota");
-                DesactivarTemporizador();
+                Debug.Log("Derrota por tiempo");
+                tiempoActivado = false;
+
+                // Llamar a GameOver desde RayRecolectables
+                if (rayRecolectables != null)
+                    rayRecolectables.ActivarGameOver();
             }
 
+            // 🔁 Lógica de duplicación
             if (!empezarDuplicacion && tiempoActual >= 60f)
             {
                 empezarDuplicacion = true;
-                tiempoUltimaDuplicacion = tiempoActual; 
+                tiempoUltimaDuplicacion = tiempoActual;
             }
 
-          
             if (empezarDuplicacion && tiempoActual - tiempoUltimaDuplicacion >= intervaloDuplicacion)
             {
                 DuplicarParticulas();
                 tiempoUltimaDuplicacion = tiempoActual;
             }
         }
-
     }
+
     private void DuplicarParticulas()
     {
         if (particulas != null)
         {
-            Vector3 offset = new Vector3(contadorDuplicados * 1.9f, 0, 0); 
+            Vector3 offset = new Vector3(contadorDuplicados * 1.9f, 0, 0);
             Instantiate(particulas, particulas.transform.position + offset, Quaternion.identity);
             contadorDuplicados++;
-            Debug.Log("Part�culas duplicadas #" + contadorDuplicados);
+            Debug.Log("Partículas duplicadas #" + contadorDuplicados);
         }
     }
 
