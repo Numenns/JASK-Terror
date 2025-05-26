@@ -38,12 +38,13 @@ public class contar_c : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-
+        Debug.Log("colicion");
         if (collision.gameObject.name.Equals(zona) && grande)
         {
-
+            Debug.Log("colicion G");
             if (gameObject.transform.localScale == newScaleG && gameObject.transform.rotation.eulerAngles.y > min && gameObject.transform.rotation.eulerAngles.y < max)
             {
+                Debug.Log(collision.gameObject.transform.position);
                 GameManager.Instance.Cuenta += 1;
                 Debug.Log(GameManager.Instance.Cuenta.ToString());
                 Destroy(gameObject);
@@ -57,6 +58,7 @@ public class contar_c : MonoBehaviour
         {
             if (gameObject.transform.localScale == newScaleP && gameObject.transform.rotation.eulerAngles.y > min && gameObject.transform.rotation.eulerAngles.y < max)
             {
+                Debug.Log(collision.gameObject.transform.position);
                 GameManager.Instance.Cuenta += 1;
                 Debug.Log(GameManager.Instance.Cuenta.ToString());
                 Destroy(gameObject);

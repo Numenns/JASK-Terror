@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     private int cuenta;
-    private int velocidad;
+    private Boolean iniciar = false;
+    private Boolean perdiste = false;
 
     public int Cuenta { get => cuenta; set => cuenta = value; }
+    public Boolean Iniciar { get => iniciar; set => iniciar = value; }
+    public Boolean Perdiste { get => perdiste; set => perdiste = value; }
 
     private void Awake()
     {
@@ -24,8 +27,11 @@ public class GameManager : MonoBehaviour
            
         }
     }
-    private void aumentar_estres()
+    private void Update()
     {
-
+        if (perdiste)
+        {
+            Debug.Log("perdiste");
+        }
     }
 }

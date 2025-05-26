@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class fijarjugador : MonoBehaviour
 {
+    public Light luz;
+    public GameObject muñeco;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +20,9 @@ public class fijarjugador : MonoBehaviour
         Vector3 x = new Vector3(-1.828f, 2f, 0.335f);
         if (other.gameObject.CompareTag("Player"))
         {
+            muñeco.active = true;
+
+            GameManager.Instance.Iniciar = true;
             other.gameObject.transform.position = x;
             other.gameObject.GetComponent<Rigidbody>().useGravity = false;
             other.gameObject.GetComponent<Movement>().speed = 0;

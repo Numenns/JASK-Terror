@@ -9,8 +9,7 @@ public class agarrar : MonoBehaviour
     float coordZ;
     private Rigidbody rb;
     private Boolean pequeño = true;
-    private Boolean tiempo = false;
-    private float estres;
+    private Boolean grande = true;
     private double nX;
     private double nY;
     private double nZ;
@@ -32,10 +31,7 @@ public class agarrar : MonoBehaviour
     }
     private void Update()
     {
-        if (tiempo)
-        {
-            estres += Time.deltaTime;
-        }
+
     }
     private void OnMouseDrag()
     {
@@ -50,20 +46,23 @@ public class agarrar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
 
-            if (pequeño == true)
+            if (grande == true)
             {
                 transform.localScale = newScaleG;
-                pequeño = false;
+                pequeño = true;
+                grande = false;
+
 
             }
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
 
-            if (pequeño == false)
+            if (pequeño == true)
             {
                 transform.localScale = newScaleP;
-                pequeño = true;
+                pequeño = false;
+                grande = true;
 
             }
         }
@@ -77,7 +76,7 @@ public class agarrar : MonoBehaviour
         }
         coordZ = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         //mOffset = gameObject.transform.position - getMposition();
-        tiempo = true;
+
 
     }
     private void OnMouseUp()
@@ -86,9 +85,6 @@ public class agarrar : MonoBehaviour
         {
             rb.useGravity = true;
         }
-        tiempo = false;
-        Debug.Log(estres);
-
     }
     private Vector3 getMposition()
     {
