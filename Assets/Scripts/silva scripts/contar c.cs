@@ -42,7 +42,8 @@ public class contar_c : MonoBehaviour
         if (collision.gameObject.name.Equals(zona) && grande)
         {
             Debug.Log("colicion G");
-            if (gameObject.transform.localScale == newScaleG && gameObject.transform.rotation.eulerAngles.y > min && gameObject.transform.rotation.eulerAngles.y < max)
+            if (gameObject.transform.localScale == newScaleG && gameObject.transform.rotation.eulerAngles.y > min
+                && gameObject.transform.rotation.eulerAngles.y < max)
             {
                 Debug.Log(collision.gameObject.transform.position);
                 GameManager.Instance.Cuenta += 1;

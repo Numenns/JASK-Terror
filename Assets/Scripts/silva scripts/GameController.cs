@@ -10,10 +10,14 @@ public class GameManager : MonoBehaviour
     private int cuenta;
     private Boolean iniciar = false;
     private Boolean perdiste = false;
+    private Boolean parar = false;
+    private Boolean ganaste = false;
 
     public int Cuenta { get => cuenta; set => cuenta = value; }
     public Boolean Iniciar { get => iniciar; set => iniciar = value; }
     public Boolean Perdiste { get => perdiste; set => perdiste = value; }
+    public Boolean Parar { get => parar; set => parar = value; }
+    public Boolean Ganaste { get => ganaste; set => ganaste = value; }
 
     private void Awake()
     {
@@ -31,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         if (perdiste)
         {
-            Debug.Log("perdiste");
+            //Debug.Log("perdiste");
         }
     }
 }
