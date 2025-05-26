@@ -15,10 +15,10 @@ public class ObjetoInteractivo : MonoBehaviour
         {
             yaActivado = true;
 
-    
-            gameInstance.Instance.SumValues(1);
 
-           
+            Inventario.Instancia.Motores += 1;
+
+
             gameObject.tag = "Untagged";
 
         
