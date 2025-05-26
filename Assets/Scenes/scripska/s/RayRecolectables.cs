@@ -18,6 +18,7 @@ public class RayRecolectables : MonoBehaviour
     private int totalHistorias = 5;
 
     private bool gameOver = false;
+    private bool estaEnZonaPeligro = false;
 
     private float tiempoGameOver = 0f;
     private float delayGameOver = 2f;
@@ -58,19 +59,20 @@ public class RayRecolectables : MonoBehaviour
             }
         }
 
-        // Si ganó
+       
         if (historiasRecolectadas >= totalHistorias && !gameOver)
         {
             SceneManager.LoadScene(siguienteEscena);
         }
 
-        // Si perdió por fuego
-        if (gameOver)
+        if (estaEnZonaPeligro)
         {
             tiempoGameOver += Time.deltaTime;
-            if (tiempoGameOver >= delayGameOver)
+            if (tiempoGameOver >= delayGameOver && !gameOver)
             {
-                SceneManager.LoadScene(escenaDerrota);
+                
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                gameOver = true;
             }
         }
     }
@@ -98,7 +100,17 @@ public class RayRecolectables : MonoBehaviour
         if (canvasAdvertencia != null)
             canvasAdvertencia.SetActive(true);
 
-        gameOver = true;
+        estaEnZonaPeligro = true;
         tiempoGameOver = 0f;
     }
+
+    public void CancelarGameOver()
+    {
+        estaEnZonaPeligro = false;
+        tiempoGameOver = 0f;
+
+        if (canvasAdvertencia != null)
+            canvasAdvertencia.SetActive(false);
+    }
+
 }

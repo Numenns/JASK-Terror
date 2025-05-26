@@ -6,28 +6,34 @@ using UnityEngine;
 
 public class velocidadCamara : MonoBehaviour
 {
+
     private Quaternion lastRotation;
     public float rotationSpeed;
     public float rotacion_maxima;
     public Light luz;
     public Light luzTV;
-    public Light luz3;
+    private Light luz3;
     public GameObject muñeco1;
     public GameObject muñeco2;
     [SerializeField] float luz2P;
-    private Boolean inicio = false;
-    private Boolean perder = false;
+    private Boolean enJuego = false;
+    private Boolean despierto = false;
+    public AudioSource musica;
+    public AudioSource respiracion;
+    public AudioSource luces;
+    
+
     void Start()
     {
         lastRotation = transform.rotation;
+        luz3 = muñeco2.GetComponentInChildren<Light> ();
         
     }
 
     void Update()
     {
         velocidad();
-        perder1();
-        perder2();
+        perder();
         comenzar();
     }
 
@@ -43,21 +49,29 @@ public class velocidadCamara : MonoBehaviour
         rotationSpeed = angle / Time.deltaTime;
         lastRotation = transform.rotation;
     }
-    public void perder1()
+    public void perder()
     {
-        if (rotationSpeed > rotacion_maxima && inicio)
+        if (rotationSpeed > rotacion_maxima && enJuego)
         {
+            GameManager.Instance.Perdiste = true;
+            StopAllCoroutines();
+        }
+        else if(despierto && rotationSpeed > 3f)
+        {
+            StopAllCoroutines();
             GameManager.Instance.Perdiste = true;
         }
     }
 
-    IEnumerator RepetirCada5Segundos()
+    IEnumerator revision()
     {
+        musica.Play();
+        respiracion.volume = 0.3f;
         Debug.Log("inicia ciclo");
         float numero = UnityEngine.Random.Range(5, 11);
-        
         yield return new WaitForSeconds(numero);
         luz.intensity = 0;
+        luces.Play();
         for (int i = 0; i < 5; i++)
         {
             yield return new WaitForSeconds(0.1f);
@@ -71,13 +85,15 @@ public class velocidadCamara : MonoBehaviour
         muñeco1.active = false;
         muñeco2.active = true;
         luz3.intensity = luz2P;
+        musica.Pause();
+        respiracion.volume = 0.3f;
 
-        if (rotationSpeed > 5)
-        {
-            perder = true;
-        }
+        despierto = true;
+        
 
         yield return new WaitForSeconds(3.5f);
+        luces.Play();
+        despierto = false;
         for (int i = 0; i < 5; i++)
         {
             yield return new WaitForSeconds(0.1f);
@@ -90,24 +106,18 @@ public class velocidadCamara : MonoBehaviour
         ;
         muñeco2.active = false;
         luz.intensity = 4000;
+        luzTV.intensity = 66;
         muñeco1.active = true;
 
-        StartCoroutine(RepetirCada5Segundos());
+        StartCoroutine(revision());
     }
     public void comenzar()
     {
-        if (GameManager.Instance.Iniciar && inicio == false)
+        if (GameManager.Instance.Iniciar && enJuego == false)
         {
-            inicio = true;
-            StartCoroutine(RepetirCada5Segundos());
+            enJuego = true;
+            StartCoroutine(revision());
         }
     } 
-    public void perder2()
-    {
-        if (perder)
-        {
-            StopAllCoroutines();
-            GameManager.Instance.Perdiste = true;
-        }
-    }
+    
 }
