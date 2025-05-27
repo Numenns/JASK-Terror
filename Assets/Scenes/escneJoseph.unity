@@ -73772,7 +73772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distancia: 5
-  puntero: {fileID: 2800000, guid: 55bd1c2b58ee8d449805f05adf5e7156, type: 3}
+  puntero: {fileID: 2800000, guid: d555104101bdf4d45947c39c70599787, type: 3}
   TextDetect: {fileID: 1404864358}
 --- !u!1 &1614767307
 GameObject:
