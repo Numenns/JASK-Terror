@@ -10,10 +10,15 @@ public class perderganar : MonoBehaviour
     public Light luz;
     public GameObject muñeco1;
     public GameObject muñeco2;
+    public GameObject muñeco3;
     public GameObject jumpscare;
     public AudioSource jumpscareS;
     public Boolean x=true;
     public GameObject jugador;
+    public Light luzcuarto;
+    public GameObject salida;
+    public GameObject player;
+    public GameObject comenzar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -88,6 +93,15 @@ public class perderganar : MonoBehaviour
 
         muñeco1.active = false;
         muñeco2.active = false;
+        muñeco3.active = true;
+        RenderSettings.fog = false;
+        luzcuarto.enabled = true;
+        salida.active = true;
+        luz.intensity = 0;
+        player.GetComponent<Rigidbody>().useGravity = true;
+        player.gameObject.GetComponent<Movement>().speed = 5;
+        comenzar.active = false;
+
         Debug.Log("ganaste");
         StopAllCoroutines();
 

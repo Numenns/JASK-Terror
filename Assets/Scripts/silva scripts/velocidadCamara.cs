@@ -22,6 +22,7 @@ public class velocidadCamara : MonoBehaviour
     public AudioSource respiracion;
     public AudioSource luces;
     
+    
 
     void Start()
     {
