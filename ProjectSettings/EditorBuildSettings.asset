@@ -27,8 +27,8 @@ EditorBuildSettings:
     path: Assets/Scenes/escenaSilva.unity
     guid: 6ca61bac17fe17f46bf3ae99776af0d0
   - enabled: 1
-    path: Assets/Scenes/progresos.unity
-    guid: 4a1fe46a73e23dd45819167e1a7d34ab
+    path: Assets/Scenes/progreso.unity
+    guid: 948946e2f73d70b4bb298b487c9c8c22
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

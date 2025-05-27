@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -27,14 +28,14 @@ public class Inventario : MonoBehaviour
     private float tiempoActual = 0;
     private string nombre;
     private int notas;
-    
+    public List<GameManagerData> datosCargados = new List<GameManagerData>();
 
     public float TiempoActual { get => tiempoActual; set => tiempoActual = value; }
     public string Nombre { get => nombre; set => nombre = value; }
-    
     public String Temp { get => temp; set => temp = value; }
     public int Notas { get => notasGuardadas.Count; set => notas = value; }
     public int Motores { get => motores; set => motores = value; }
+    public List<GameManagerData> DatosCargados { get => datosCargados; set => datosCargados = value; }
 
     [System.Serializable]
     public class GameManagerData
@@ -42,6 +43,11 @@ public class Inventario : MonoBehaviour
         public String temp;
         public String nombre;
         public int Notas;
+    }
+    [System.Serializable]
+    public class ListaDeDatos
+    {
+        public List<GameManagerData> lista = new List<GameManagerData>();
     }
     void Awake()
     {
@@ -70,6 +76,7 @@ public class Inventario : MonoBehaviour
     }
     public void GuardarDatos()
     {
+        // Creamos un nuevo objeto con los datos actuales
         GameManagerData data = new GameManagerData
         {
             temp = this.temp,
@@ -77,7 +84,13 @@ public class Inventario : MonoBehaviour
             Notas = this.Notas
         };
 
-        string json = JsonUtility.ToJson(data, true);
+        datosCargados.Add(data); // Añadimos a la lista
+
+        // Empaquetamos la lista para serializarla
+        ListaDeDatos listaParaGuardar = new ListaDeDatos();
+        listaParaGuardar.lista = datosCargados;
+
+        string json = JsonUtility.ToJson(listaParaGuardar, true);
         string path = Application.persistentDataPath + "/gamemanager.json";
         File.WriteAllText(path, json);
 
@@ -90,11 +103,18 @@ public class Inventario : MonoBehaviour
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
-            GameManagerData data = JsonUtility.FromJson<GameManagerData>(json);
+            ListaDeDatos listaCargada = JsonUtility.FromJson<ListaDeDatos>(json);
 
-            this.temp = data.temp;
-            this.nombre = data.nombre;
-            this.Notas = data.Notas;
+            datosCargados = listaCargada.lista;
+
+            // Si quieres, también actualizas los datos actuales con el último de la lista:
+            if (datosCargados.Count > 0)
+            {
+                GameManagerData ultimo = datosCargados[datosCargados.Count - 1];
+                this.temp = ultimo.temp;
+                this.nombre = ultimo.nombre;
+                this.Notas = ultimo.Notas;
+            }
 
             Debug.Log("Datos cargados correctamente");
         }
