@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Permite la selección de objetos y la interacción mediante raycasting.
+/// </summary>
+
 public class Select2 : MonoBehaviour
 {
     LayerMask mask;
@@ -84,7 +88,7 @@ public class Select2 : MonoBehaviour
 
     void Deselect()
     {
-        if (ultimoReconocido)
+        if (ultimoReconocido)   
         {
             ObjNote nota = ultimoReconocido.GetComponent<ObjNote>();
             if (nota != null)
