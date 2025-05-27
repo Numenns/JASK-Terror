@@ -265,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362040152157619713, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977339310684445528, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2385,7 +2385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362040152157619713, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977339310684445528, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2899,7 +2899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362040152157619713, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977339310684445528, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3003,8 +3003,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "paco odia el desorden y los movimientos bruscos, organiza los juguetes
-    de paco cuando no este viendo (tama\xF1o y orientaci\xF3n correctas). procura
+  m_text: "paco odia el desorden y los movimientos bruscos, evita moverte muy rapido
+    y  organiza los juguetes de paco(tama\xF1o y orientaci\xF3n correctas). procura
     quedarte quieto cuando paco despierte."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f71d96c860da9c47a4dbb77be6ce3e6, type: 2}
@@ -3747,7 +3747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362040152157619713, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977339310684445528, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8563,7 +8563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362040152157619713, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977339310684445528, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9935,7 +9935,6 @@ MonoBehaviour:
   jugador: {fileID: 447390939}
   luzcuarto: {fileID: 1191774034}
   salida: {fileID: 1630369919}
-  player: {fileID: 447390939}
   comenzar: {fileID: 1962984864}
 --- !u!1001 &845406984793843322
 PrefabInstance:
@@ -10115,7 +10114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362040152157619713, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977339310684445528, guid: 0abba269edc3e3244817b6d7aae60cd5, type: 3}
       propertyPath: m_LocalPosition.x

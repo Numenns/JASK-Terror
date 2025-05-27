@@ -3,13 +3,31 @@ using UnityEngine;
 /// <summary>
 /// Controla la activación/desactivación de objetos cuando otro objeto con cierto tag entra al trigger.
 /// </summary>
-
 public class abrirSotano : MonoBehaviour
 {
+    /// <summary>
+    /// Objeto que se desactivará cuando un objeto con el tag "obji" entre al trigger.
+    /// </summary>
     public GameObject objetoADesactivar;
+
+    /// <summary>
+    /// Primer objeto que se activará cuando un objeto con el tag "obji" entre al trigger.
+    /// </summary>
     public GameObject objetoAActivar1;
+
+    /// <summary>
+    /// Segundo objeto que se activará cuando un objeto con el tag "obji" entre al trigger.
+    /// </summary>
     public GameObject objetoAActivar2;
+
+    /// <summary>
+    /// Componente de audio que se reproducirá cuando un objeto con el tag "obji" entre al trigger.
+    /// </summary>
     public AudioSource miAudio;
+
+    /// <summary>
+    /// Método que se ejecuta cuando otro objeto entra en el trigger.
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Algo entró al trigger: " + other.name);
@@ -43,5 +61,3 @@ public class abrirSotano : MonoBehaviour
         }
     }
 }
-
-
