@@ -16,7 +16,7 @@ public class Transformacion : MonoBehaviour
 
     void Update()
     {
-        // Visualiza el rayo en la escena
+        
         Debug.DrawRay(transform.position, transform.forward * distanciaInteraccion, Color.red);
 
         if (Input.GetKeyDown(KeyCode.Q) && !estaCreciendo)
@@ -24,14 +24,13 @@ public class Transformacion : MonoBehaviour
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
 
-            // Lanza el ray solo contra objetos en la capa específica
             if (Physics.Raycast(ray, out hit, distanciaInteraccion, capaMedicina))
             {
                 if (hit.collider.CompareTag("Medicine"))
                 {
                     Debug.Log("¡Medicina detectada!");
-                    Destroy(hit.collider.gameObject); // Destruye la medicina
-                    StartCoroutine(AgrandarTemporalmente()); // Comienza la transformación
+                    Destroy(hit.collider.gameObject);
+                    StartCoroutine(AgrandarTemporalmente()); 
                 }
             }
             else
@@ -46,7 +45,7 @@ public class Transformacion : MonoBehaviour
         estaCreciendo = true;
         transform.localScale = escalaOriginal * 2f;
 
-        yield return new WaitForSeconds(10f); // Tiempo en estado gigante
+        yield return new WaitForSeconds(10f); 
 
         transform.localScale = escalaOriginal;
         estaCreciendo = false;
