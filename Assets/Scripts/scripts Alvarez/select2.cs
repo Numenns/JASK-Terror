@@ -88,7 +88,7 @@ public class Select2 : MonoBehaviour
 
     void Deselect()
     {
-        if (ultimoReconocido)
+        if (ultimoReconocido)   
         {
             ObjNote nota = ultimoReconocido.GetComponent<ObjNote>();
             if (nota != null)

@@ -30,52 +30,6 @@
 //        }
 //        Debug.Log(cuenta);
 //    }
-//    public void GuardarDatos()
-//    {
-//        GameManagerData data = new GameManagerData
-//        {
-//            cuenta = this.Cuenta,
-//            iniciar = this.Iniciar,
-//            perdiste = this.Perdiste,
-//            parar = this.Parar,
-//            ganaste = this.Ganaste
-//        };
-
-//        string json = JsonUtility.ToJson(data, true);
-//        string path = Application.persistentDataPath + "/gamemanager.json";
-//        File.WriteAllText(path, json);
-
-//        Debug.Log($"Datos guardados en: {path}");
-//    }
-//    public void CargarDatos()
-//    {
-//        string path = Application.persistentDataPath + "/gamemanager.json";
-//        if (File.Exists(path))
-//        {
-//            string json = File.ReadAllText(path);
-//            GameManagerData data = JsonUtility.FromJson<GameManagerData>(json);
-
-//            this.Cuenta = data.cuenta;
-//            this.Iniciar = data.iniciar;
-//            this.Perdiste = data.perdiste;
-//            this.Parar = data.parar;
-//            this.Ganaste = data.ganaste;
-
-//            Debug.Log("Datos cargados correctamente");
-//        }
-//        else
-//        {
-//            Debug.LogWarning("No se encontró el archivo JSON");
-//        }
-//    }
-//    [System.Serializable]
-//    public class GameManagerData
-//    {
-//        public int cuenta;
-//        public bool iniciar;
-//        public bool perdiste;
-//        public bool parar;
-//        public bool ganaste;
-//    }
+//    
 
 //}
