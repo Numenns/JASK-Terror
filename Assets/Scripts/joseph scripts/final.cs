@@ -7,7 +7,7 @@ public class final : MonoBehaviour
 
     void Update()
     {
-        if (!puertaAbierta && Inventario.Instancia != null && Inventario.Instancia.Motores >= 8)
+        if (!puertaAbierta && Inventario.Instancia != null && Inventario.Instancia.Motores >= 9)
         {
             opdoor.SetActive(true);
             puertaAbierta = true;
