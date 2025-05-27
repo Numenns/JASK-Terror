@@ -1,23 +1,46 @@
 using System.Collections;
 using UnityEngine;
-
+/// <summary>
+/// Controla el comportamiento del juego al detectar al jugador en una zona específica.
+/// - Reproduce música y sonido de respiración.
+/// - Activa la interfaz del tiempo.
+/// - Posiciona al jugador en un punto específico.
+/// - Desactiva la gravedad y bloquea el movimiento.
+/// </summary>
 public class fijarjugador : MonoBehaviour
 {
+    /// <summary>
+    /// Referencia al GameObject del enemigo.
+    /// </summary>
     public GameObject muñeco;
+    /// <summary>
+    /// Referencia al AudioSource de la musica.
+    /// </summary>
     public AudioSource musica;
+    /// <summary>
+    /// Referencia al AudioSource de la respiracion.
+    /// </summary>
     public AudioSource respiracion;
+    /// <summary>
+    /// Referencia al Canvas con el temporizador.
+    /// </summary>
     public Canvas tiempo;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
 
     }
+    /// <summary>
+    /// Detecta la colisión con el jugador (tag "Player") y activa una secuencia de eventos,
+    /// entre ellos establecer el inicio del juego como true.
+    /// </summary>
+    /// <param name="other">Collider del objeto que entra en la zona.</param>
     private void OnTriggerEnter(Collider other)
     {
         

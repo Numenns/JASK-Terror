@@ -1,10 +1,11 @@
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+/// <summary>
+/// Clase responsable de reposicionar objetos con el tag "objeto" en ubicaciones específicas al colisionar con el trigger.
+/// </summary>
 public class respawn : MonoBehaviour
 {
-    public GameObject herramienta;
     void Start()
     {
         
@@ -13,6 +14,10 @@ public class respawn : MonoBehaviour
     {
         
     }
+    /// <summary>
+    /// Detecta colisiones con objetos que tengan el tag "objeto" y los reposiciona según su nombre.
+    /// </summary>
+    /// <param name="other">Collider del objeto que entra en el trigger.</param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("objeto"))

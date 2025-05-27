@@ -4,34 +4,73 @@ using Unity.Cinemachine;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Controla el comportamiento de perder o ganar en el juego,
+/// incluyendo animaciones, efectos de luz, jumpscare y recarga de la escena.
+/// </summary>
 public class perderganar : MonoBehaviour
 {
+    /// <summary>
+    /// Luz principal utilizada para efectos visuales durante las transiciones.
+    /// </summary>
     public Light luz;
+    /// <summary>
+    /// Primera pustura del muñeco involucrado en la animación.
+    /// </summary>
     public GameObject muñeco1;
+    /// <summary>
+    /// Segunda pustura del muñeco involucrado en la animación.
+    /// </summary>
     public GameObject muñeco2;
+    /// <summary>
+    /// Tercera pustura del muñeco que se activa en la animación de ganar.
+    /// </summary>
     public GameObject muñeco3;
+    /// <summary>
+    /// Muñeco con animacion jumpscare que se activa al perder.
+    /// </summary>
     public GameObject jumpscare;
+    /// <summary>
+    /// Sonido de jumpscare reproducido al perder.
+    /// </summary>
     public AudioSource jumpscareS;
+    /// <summary>
+    /// Control de ejecución para asegurar que la animación se ejecuta una sola vez.
+    /// </summary>
     public Boolean x=true;
+    /// <summary>
+    /// Referencia al objeto del jugador.
+    /// </summary>
     public GameObject jugador;
+    /// <summary>
+    /// Luz de la habitación, se activa al ganar.
+    /// </summary>
     public Light luzcuarto;
+    /// <summary>
+    /// Objeto para el cambio de escena que se activa al ganar.
+    /// </summary>
     public GameObject salida;
-    public GameObject player;
+    /// <summary>
+    /// bloque con collider para el inicio del juego.
+    /// </summary>
     public GameObject comenzar;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    /// <summary>
+    ///verifica condiciones de perder o ganar.
+    /// </summary>
     void Update()
     {
        Perder();
     }
-
+    /// <summary>
+    /// Verifica las condiciones de perder o ganar y ejecuta la animación correspondiente.
+    /// </summary>
     public void Perder()
     {
         if (Inventario.Instancia.Perdiste && x)
@@ -45,6 +84,9 @@ public class perderganar : MonoBehaviour
             x = false;
         }
     }
+    /// <summary>
+    /// Ejecuta la animación y lógica al perder, incluyendo jumpscare, desactivación de objetos y reinicio de escena.
+    /// </summary>
     IEnumerator AnimacionP()
     {
         yield return new WaitForSeconds(1f);
@@ -77,6 +119,9 @@ public class perderganar : MonoBehaviour
         
         
     }
+    /// <summary>
+    /// Ejecuta la animación y lógica al ganar, incluyendo efectos de luz, activación de objetos y control del jugador.
+    /// </summary>
     IEnumerator AnimacionG()
     {
         yield return new WaitForSeconds(1f);
@@ -98,9 +143,12 @@ public class perderganar : MonoBehaviour
         luzcuarto.enabled = true;
         salida.active = true;
         luz.intensity = 0;
-        player.GetComponent<Rigidbody>().useGravity = true;
-        player.gameObject.GetComponent<Movement>().speed = 5;
+        jugador.GetComponent<Rigidbody>().useGravity = true;
+        jugador.gameObject.GetComponent<Movement>().speed = 5;
         comenzar.active = false;
+        Inventario.Instancia.Perdiste = false;
+        Inventario.Instancia.Ganaste = false;
+        Inventario.Instancia.Iniciar = false;
 
         Debug.Log("ganaste");
         StopAllCoroutines();
