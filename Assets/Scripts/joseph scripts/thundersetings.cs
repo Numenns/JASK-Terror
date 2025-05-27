@@ -1,26 +1,63 @@
 using UnityEngine;
 
+/// <summary>
+/// Controla un efecto de trueno cíclico que incluye iluminación y sonido en Unity.
+/// </summary>
 public class thundersetings : MonoBehaviour
 {
-    [Header("Referencia a la luz direccional")]
+    /// <summary>
+    /// Luz direccional que simula el relámpago.
+    /// </summary>
     [SerializeField] private Light luzDireccional;
 
-    [Header("Parámetros del Ciclo")]
-    [SerializeField] private float duracionCiclo = 5f;           // Duración de subida + oscilación + bajada
-    [SerializeField] private float intervaloEntreCiclos = 10f;   // Cada cuánto se repite todo el ciclo
+    /// <summary>
+    /// Duración total del ciclo de trueno en segundos.
+    /// </summary>
+    [SerializeField] private float duracionCiclo = 5f;
 
-    [Header("Iluminación")]
+    /// <summary>
+    /// Intervalo de tiempo entre cada ciclo de trueno en segundos.
+    /// </summary>
+    [SerializeField] private float intervaloEntreCiclos = 10f;
+
+    /// <summary>
+    /// Intensidad máxima que alcanza la luz durante el trueno.
+    /// </summary>
     [SerializeField] private float intensidadMaxima = 1f;
+
+    /// <summary>
+    /// Duración de la fase de oscilación de la luz en segundos.
+    /// </summary>
     [SerializeField] private float duracionOscilacion = 1f;
+
+    /// <summary>
+    /// Número de oscilaciones de la luz durante la fase de oscilación.
+    /// </summary>
     [SerializeField] private int cantidadOscilaciones = 3;
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource audioSource; // Solo uno
+    /// <summary>
+    /// Fuente de audio que reproduce el sonido del trueno.
+    /// </summary>
+    [SerializeField] private AudioSource audioSource;
 
+    /// <summary>
+    /// Tiempo transcurrido desde el inicio o desde el último ciclo.
+    /// </summary>
     private float tiempoActual = 0f;
+
+    /// <summary>
+    /// Indica si el ciclo de trueno está activo.
+    /// </summary>
     private bool cicloActivo = false;
+
+    /// <summary>
+    /// Indica si el sonido del trueno ya ha sido reproducido en el ciclo actual.
+    /// </summary>
     private bool sonidoReproducido = false;
 
+    /// <summary>
+    /// Inicializa las referencias y verifica que se hayan asignado correctamente.
+    /// </summary>
     private void Start()
     {
         if (luzDireccional == null)
@@ -29,6 +66,9 @@ public class thundersetings : MonoBehaviour
             Debug.LogError("Debes asignar un AudioSource.");
     }
 
+    /// <summary>
+    /// Actualiza el estado del ciclo de trueno, controlando la iluminación y el sonido.
+    /// </summary>
     private void Update()
     {
         if (luzDireccional == null || audioSource == null) return;
@@ -47,8 +87,8 @@ public class thundersetings : MonoBehaviour
             cicloActivo = true;
             if (!sonidoReproducido)
             {
-                audioSource.Play(); // Usa el clip asignado al AudioSource
-                Debug.Log("Sonido de trueno reproducido."); // Este mensaje aparecerá en la consola
+                audioSource.Play();
+                Debug.Log("Sonido de trueno reproducido.");
                 sonidoReproducido = true;
             }
 
