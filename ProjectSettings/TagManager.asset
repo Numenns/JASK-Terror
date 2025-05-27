@@ -10,6 +10,8 @@ TagManager:
   - ObjetoPuerta2
   - Historiaclinica
   - Enemigo
+  - Fuego
+  - Medicine
   layers:
   - Default
   - TransparentFX
