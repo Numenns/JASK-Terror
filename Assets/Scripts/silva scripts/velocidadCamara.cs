@@ -32,6 +32,7 @@ public class velocidadCamara : MonoBehaviour
 
     void Update()
     {
+        
         velocidad();
         perder();
         comenzar();
@@ -53,13 +54,15 @@ public class velocidadCamara : MonoBehaviour
     {
         if (rotationSpeed > rotacion_maxima && enJuego)
         {
-            GameManager.Instance.Perdiste = true;
+            Debug.Log("perder");
+            Inventario.Instancia.Perdiste = true;
             StopAllCoroutines();
         }
         else if(despierto && rotationSpeed > 3f)
         {
+            Debug.Log("perder");
             StopAllCoroutines();
-            GameManager.Instance.Perdiste = true;
+            Inventario.Instancia.Perdiste = true;
         }
     }
 
@@ -113,8 +116,9 @@ public class velocidadCamara : MonoBehaviour
     }
     public void comenzar()
     {
-        if (GameManager.Instance.Iniciar && enJuego == false)
+        if (Inventario.Instancia.Iniciar && enJuego == false)
         {
+            Debug.Log("x");
             enJuego = true;
             StartCoroutine(revision());
         }

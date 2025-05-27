@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/escneJoseph.unity
     guid: 36fe2711693d4184fb4a2c3e7cac1f46
   - enabled: 1
-    path: Assets/Scenes/scripska/escenaKarol.unity
+    path: Assets/Scripts/scripska/escenaKarol.unity
     guid: 8f0c5e6717f587b4e92768b38e63b406
   - enabled: 1
     path: Assets/Scenes/escenaSilva.unity
