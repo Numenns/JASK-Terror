@@ -36,7 +36,7 @@ public class DetectorFuego : MonoBehaviour
                 StopCoroutine(parpadeoCoroutine);
                 estaParpadeando = false;
 
-                // Restaurar canvas a invisible
+              
                 canvasGroup.alpha = 0f;
                 canvasGroup.interactable = false;
                 canvasGroup.blocksRaycasts = false;
@@ -54,7 +54,7 @@ public class DetectorFuego : MonoBehaviour
     {
         while (true)
         {
-            // Fade in
+     
             float t = 0f;
             while (t < fadeDuration)
             {
@@ -63,7 +63,7 @@ public class DetectorFuego : MonoBehaviour
                 yield return null;
             }
 
-            // Fade out
+         
             t = 0f;
             while (t < fadeDuration)
             {
