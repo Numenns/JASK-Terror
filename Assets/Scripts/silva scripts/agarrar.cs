@@ -31,7 +31,7 @@ public class agarrar : MonoBehaviour
     }
     private void Update()
     {
-
+        
     }
     private void OnMouseDrag()
     {
@@ -92,4 +92,5 @@ public class agarrar : MonoBehaviour
         mouseP.z = coordZ;
         return Camera.main.ScreenToWorldPoint(mouseP);
     }
+    
 }
