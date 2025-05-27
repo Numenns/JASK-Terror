@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Controla la activación/desactivación de objetos cuando otro objeto con cierto tag entra al trigger.
+/// </summary>
+
 public class abrirSotano : MonoBehaviour
 {
     public GameObject objetoADesactivar;
