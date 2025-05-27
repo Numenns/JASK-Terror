@@ -8,6 +8,7 @@ public class Transformacion : MonoBehaviour
 
     private Vector3 escalaOriginal;
     private bool estaCreciendo = false;
+    private GameObject tranformaA;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class Transformacion : MonoBehaviour
             }
             else
             {
-                Debug.Log("No se detectó nada.");
+                Debug.Log("NO SE ENCUENTRA, POSICION.");
             }
         }
     }
