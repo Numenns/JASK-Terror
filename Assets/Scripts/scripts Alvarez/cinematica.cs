@@ -1,6 +1,5 @@
 using UnityEngine;
 
-sing UnityEngine;
 
 /// <summary>
 /// Controla la transición entre la cámara cinemática y el control del jugador.
