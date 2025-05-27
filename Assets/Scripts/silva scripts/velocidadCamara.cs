@@ -33,7 +33,10 @@ public class velocidadCamara : MonoBehaviour
 
     void Update()
     {
-        
+        if (Inventario.Instancia.Perdiste)
+        {
+            StopAllCoroutines();
+        }
         velocidad();
         perder();
         comenzar();

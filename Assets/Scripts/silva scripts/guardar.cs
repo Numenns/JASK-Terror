@@ -36,8 +36,8 @@ public class guardar : MonoBehaviour
 
             foreach (var data in Inventario.Instancia.datosCargados)
             {
-                textoFinal += $"Nombre: {data.nombre} |";
-                textoFinal += $"Tiempo: {data.temp} |";
+                textoFinal += $"Nombre: {data.nombre} | ";
+                textoFinal += $"Tiempo: {data.temp} |  ";
                 textoFinal += $"Notas: {data.Notas} \n";
                 textoFinal += "------------------------\n";
             }
