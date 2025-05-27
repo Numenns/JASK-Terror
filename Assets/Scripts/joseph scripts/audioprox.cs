@@ -22,7 +22,7 @@ public class audioprox : MonoBehaviour
             return;
         }
 
-        audioSrc.loop = false; // no queremos loop
+        audioSrc.loop = false; 
         timer = playInterval;
     }
 
