@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Permite la selección de objetos y la interacción mediante raycasting.
+/// </summary>
+
 public class Select2 : MonoBehaviour
 {
     LayerMask mask;
