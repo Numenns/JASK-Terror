@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class RayRecolectables : MonoBehaviour
 {
-    public float distanciaInteraccion = 2f;
+    public float distanciaInteraccion = 3f;
     public LayerMask capaHistoriaClin;
 
     public TextMeshProUGUI contadorTexto;
@@ -21,7 +21,7 @@ public class RayRecolectables : MonoBehaviour
     private bool estaEnZonaPeligro = false;
 
     private float tiempoGameOver = 0f;
-    private float delayGameOver = 10f; 
+    private float delayGameOver = 4f; 
 
     private string[] mensajesMedicos = {
         "Ingreso de urgencias a hospital con estado delicado",
