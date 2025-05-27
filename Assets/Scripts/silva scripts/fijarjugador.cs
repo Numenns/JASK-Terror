@@ -28,7 +28,7 @@ public class fijarjugador : MonoBehaviour
 
             tiempo.gameObject.SetActive(true);
             Vector3 x = new Vector3(-1.828f, 2f, 0.335f);
-            GameManager.Instance.Iniciar = true;
+            Inventario.Instancia.Iniciar = true;
             other.gameObject.transform.position = x;
             other.gameObject.GetComponent<Rigidbody>().useGravity = false;
             other.gameObject.GetComponent<Movement>().speed = 0;
