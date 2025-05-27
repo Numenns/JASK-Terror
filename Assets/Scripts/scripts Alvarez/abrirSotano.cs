@@ -5,7 +5,7 @@ public class abrirSotano : MonoBehaviour
     public GameObject objetoADesactivar;
     public GameObject objetoAActivar1;
     public GameObject objetoAActivar2;
-
+    public AudioSource miAudio;
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Algo entró al trigger: " + other.name);
@@ -13,6 +13,7 @@ public class abrirSotano : MonoBehaviour
         if (other.CompareTag("obji"))
         {
             Debug.Log("El objeto que entró tiene el tag 'obji'");
+            miAudio.Play();
 
             if (objetoADesactivar != null)
             {
