@@ -2,23 +2,46 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-
+/// <summary>
+/// Clase que gestiona un temporizador de cuenta regresiva, que cambia el color de la luz, el texto y un material
+/// según el progreso del tiempo. Al finalizar el tiempo o al cumplir la condición de victoria, actualiza el estado del juego.
+/// </summary>
 public class TimeerrS: MonoBehaviour
 {
     [SerializeField] private float tiempomaximo = 3;
-
+    /// <summary>
+    /// Tiempo actual transcurrido en segundos.
+    /// </summary>
     private float tiempoActual = 0f;
+    /// <summary>
+    /// Indica si el temporizador está activo.
+    /// </summary>
     private bool tiempoActivado = false;
+    /// <summary>
+    /// TextMeshProUGUI que muestra el tiempo transcurrido.
+    /// </summary>
     public TextMeshProUGUI temp;
+    /// <summary>
+    /// Luz de la pantalla.
+    /// </summary>
     public Light luz;
+    /// <summary>
+    /// material de la pantalla.
+    /// </summary>
     public Material pantalla;
 
 
-
+    /// <summary>
+    /// Inicializa el temporizador al activar el script.
+    /// </summary>
     private void Start()
     {
         ActivarTemporizador();
     }
+    /// <summary>
+    /// Actualiza el temporizador cada frame y cambia los colores de los objetos asociados, acomoda los segundos en minutos y 
+    /// indica si el jugador a perdido o ganado.
+    /// </summary>
     void Update()
     {
         if (tiempoActivado)
@@ -55,14 +78,18 @@ public class TimeerrS: MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// Activa el temporizador y reinicia el tiempo.
+    /// </summary>
     public void ActivarTemporizador()
     {
         tiempoActual = 0;
         tiempoActivado = true;
 
     }
-
+    /// <summary>
+    /// Desactiva el temporizador.
+    /// </summary>
     public void DesactivarTemporizador()
     {
         tiempoActivado = false;

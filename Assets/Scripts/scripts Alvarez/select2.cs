@@ -3,21 +3,45 @@ using UnityEngine;
 /// <summary>
 /// Permite la selección de objetos y la interacción mediante raycasting.
 /// </summary>
-
 public class Select2 : MonoBehaviour
 {
+    /// <summary>
+    /// Máscara de capas utilizada para filtrar los objetos detectados por el raycast.
+    /// </summary>
     LayerMask mask;
+
+    /// <summary>
+    /// Distancia máxima del raycast para detectar objetos.
+    /// </summary>
     public float distancia = 1.5f;
+
+    /// <summary>
+    /// Textura utilizada como puntero en el centro de la pantalla.
+    /// </summary>
     public Texture2D puntero;
+
+    /// <summary>
+    /// Objeto de texto que se activa cuando se detecta un objeto interactivo.
+    /// </summary>
     public GameObject TextDetect;
+
+    /// <summary>
+    /// Último objeto detectado por el raycast.
+    /// </summary>
     GameObject ultimoReconocido = null;
 
+    /// <summary>
+    /// Inicializa la máscara de capas y desactiva el texto de detección.
+    /// </summary>
     void Start()
     {
         mask = LayerMask.GetMask("rayd");
         TextDetect.SetActive(false);
     }
 
+    /// <summary>
+    /// Actualiza la detección de objetos mediante raycast y maneja interacciones.
+    /// </summary>
     void Update()
     {
         RaycastHit hit;
@@ -80,15 +104,21 @@ public class Select2 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Cambia el color del objeto detectado para indicar que está seleccionado.
+    /// </summary>
     void SelectedObject(Transform transform)
     {
         transform.GetComponent<MeshRenderer>().material.color = Color.green;
         ultimoReconocido = transform.gameObject;
     }
 
+    /// <summary>
+    /// Restaura el color del último objeto detectado y oculta mensajes si es necesario.
+    /// </summary>
     void Deselect()
     {
-        if (ultimoReconocido)   
+        if (ultimoReconocido)
         {
             ObjNote nota = ultimoReconocido.GetComponent<ObjNote>();
             if (nota != null)
@@ -101,6 +131,9 @@ public class Select2 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Dibuja el puntero en pantalla y controla la visibilidad del texto de detección.
+    /// </summary>
     void OnGUI()
     {
         Rect rect = new Rect(Screen.width / 2, Screen.height / 2, puntero.width, puntero.height);
