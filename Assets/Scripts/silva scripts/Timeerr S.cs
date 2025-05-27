@@ -43,13 +43,13 @@ public class TimeerrS: MonoBehaviour
             if (tiempoActual >= tiempomaximo * 60)
             {
                 temp.text = "";
-                GameManager.Instance.Perdiste=true;
+                Inventario.Instancia.Perdiste=true;
                 DesactivarTemporizador();
             }
-            if (GameManager.Instance.Cuenta==6)
+            if (Inventario.Instancia.Cuenta==6)
             {
                 DesactivarTemporizador();
-                GameManager.Instance.Ganaste = true;
+                Inventario.Instancia.Ganaste = true;
             }
             
         }

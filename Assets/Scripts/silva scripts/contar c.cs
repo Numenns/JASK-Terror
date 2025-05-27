@@ -46,8 +46,8 @@ public class contar_c : MonoBehaviour
                 && gameObject.transform.rotation.eulerAngles.y < max)
             {
                 Debug.Log(collision.gameObject.transform.position);
-                GameManager.Instance.Cuenta += 1;
-                Debug.Log(GameManager.Instance.Cuenta.ToString());
+                Inventario.Instancia.Cuenta += 1;
+                Debug.Log(Inventario.Instancia.Cuenta.ToString());
                 Destroy(gameObject);
                 Instantiate(herramienta, collision.gameObject.transform.position, gameObject.transform.rotation);
                 Destroy(collision.gameObject);
@@ -60,8 +60,8 @@ public class contar_c : MonoBehaviour
             if (gameObject.transform.localScale == newScaleP && gameObject.transform.rotation.eulerAngles.y > min && gameObject.transform.rotation.eulerAngles.y < max)
             {
                 Debug.Log(collision.gameObject.transform.position);
-                GameManager.Instance.Cuenta += 1;
-                Debug.Log(GameManager.Instance.Cuenta.ToString());
+                Inventario.Instancia.Cuenta += 1;
+                Debug.Log(Inventario.Instancia.Cuenta.ToString());
                 Destroy(gameObject);
                 Instantiate(herramienta, collision.gameObject.transform.position, gameObject.transform.rotation);
                 Destroy(collision.gameObject);
